@@ -79,6 +79,13 @@ gtk4-build:
     - .ci/builds-docker.yml
     - .ci/build-configs.yml
 
+windows-build:
+  extends: .docker-windows
+  only:
+    changes:
+    - .ci/dockerfiles/windows-build/**/*
+    - .ci/builds-docker.yml
+
 ##########################################################################################################
 # Stage "tests": run a test battery before doing all the hard work (i.e., try to find any problems ASAP) #
 ##########################################################################################################
